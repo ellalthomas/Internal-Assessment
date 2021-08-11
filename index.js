@@ -21,13 +21,23 @@ console.log(' These are the cards you will choose from. \n' + number)
 //Lets player know what card is dealt
 console.log('The first card is a' + tableCard1)
 
-let higher = ''
-let lower = ''
-let player1Choice = prompt('Player 1, do you think the next card dealt will be higher or lower?')
+let higher = ' '
+let lower = ' '
+let player1 = prompt('Player 1, do you think the next card dealt will be higher or lower?')
 
 console.log('The card dealt is a' + tableCard2)
-while (tableCard1 > tableCard2 && player1Choice == higher) {
-  console.log('You guessed successfully')
-} while (tableCard1 < tableCard2 && player1Choice == higher) {
+
+//if next card is higher and player1 guessed higher, give a point
+//if next card is lower and player1 guessed lower, give point
+//if next card is higher and player1 guessed lower, no point
+//if next card is lower and player1 guessed higher, no point
+
+if (tableCard1 < tableCard2 || player1 == higher) {
+  console.log('You guessed correctly')
+} else if (tableCard1 > tableCard2 || player1 == higher) {
   console.log('You guessed incorrectly')
+}else if(tableCard1 > tableCard2 || player1 == lower) {
+  console.log('You guessed incorrectly')
+}else if(tableCard1 < tableCard2 || player1 == lower) {
+  console.log('You guessed correctly')
 }
