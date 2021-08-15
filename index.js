@@ -17,10 +17,15 @@ let tableCard1 = number[randomCard1];
 let tableCard2 = number[randomCard2];
 
 let point1 = 0
+// let playAgain = ''
 
 console.log(' These are the cards you will choose from. \n' + number)
 
+
+function play(){
+
 //Lets player know what card is dealt
+
 console.log('The first card is a ' + tableCard1)
 
 let player1 = prompt('Player 1, do you think the next card dealt will be higher or lower?')
@@ -44,4 +49,19 @@ if (tableCard1 < tableCard2 && player1 == 'higher') {
   point1 ++
 }
 console.log('Player1 you have ' + point1 + ' points.')
+}
 
+
+
+do{
+  play();
+}while (point1 <= 3)
+
+playAgain = prompt('Do you want to play again?');
+
+if (playAgain == 'yes') {
+play();
+} else {
+	console.log(player1 + ' your final point is ' + point1)
+	console.log('GAME OVER');
+}
