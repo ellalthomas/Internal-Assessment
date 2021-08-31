@@ -5,6 +5,10 @@
 //instructions
 console.log('Welcome to the Card Game. In this game a card will be dealt. Your job is to guess if the next card will be higher or lower. You have will have 3 rounds. Who ever has the most points at the end of the rounds will win. Good luck. \n ')
 
+//asks for players names
+let player1 = prompt('What is player1 name?')
+let player2 = prompt('What is player2 name?')
+
 //list of numbers to be picked
 let number = [ 1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12,  13];
 
@@ -14,14 +18,14 @@ let point1 = 0
 let point2 = 0
 let round = 0
 
-//initializing variables before using them - so it won't come up with 'undefined'
+//initializing variables before using them so it won't come up with 'undefined'
 let randomCard1 = ''
 let randomCard2 = ''
 let tableCard1=''
 let tableCard2=''
 
 //lets players know what they can choose from
-console.log('These are the cards you will choose from. \n' + number + '\n ')
+console.log('\nThese are the cards you will choose from. \n' + number + '\n ')
 
 play();
 function play(){
@@ -38,7 +42,7 @@ let tableCard2 = number[randomCard2];
 console.log('The card dealt is a ' + tableCard1)
 
 //asks player if they think card will be higher or lower
-let player1 = prompt('Player 1, do you think the next card dealt will be higher or lower?')
+let guess1 = prompt(player1 + ' do you think the next card dealt will be higher or lower?')
 
 //lets player know what the next card is
 console.log('The card dealt is a ' + tableCard2)
@@ -47,23 +51,23 @@ console.log('The card dealt is a ' + tableCard2)
 //if next card is lower and player1 guessed lower, give point
 //if next card is higher and player1 guessed lower, no point
 //if next card is lower and player1 guessed higher, no point
-if (tableCard1 < tableCard2 && player1 == 'higher') {
+if (tableCard1 < tableCard2 && guess1 == 'higher') {
   console.log('You guessed correctly')
   point1 ++
   round++
-} else if (tableCard1 > tableCard2 && player1 == 'higher') {
+} else if (tableCard1 > tableCard2 && guess1 == 'higher') {
   console.log('You guessed incorrectly')
   round++
-} else if (tableCard1 < tableCard2 && player1 == 'lower') {
+} else if (tableCard1 < tableCard2 && guess1 == 'lower') {
   console.log('You guessed incorrectly')
   round++
-}else if(tableCard1 > tableCard2 && player1 == 'lower') {
+}else if(tableCard1 > tableCard2 && guess1 == 'lower') {
   console.log('You guessed correctly')
   point1 ++
   round++
 }
 //tells player how many points they have
-console.log('Player1 you have ' + point1 + ' points.\n ')
+console.log(player1 + ' you have ' + point1 + ' points.\n ')
 
 
 
@@ -79,7 +83,7 @@ tableCard2 = number[randomCard2];
 console.log('The next card dealt is a ' + tableCard1)
 
 //asks player2 if they think card will be higher or lower
-let player2 = prompt('Player 2, do you think the next card dealt will be higher or lower?')
+let guess2 = prompt(player2 + ' do you think the next card dealt will be higher or lower?')
 
 //lets player know what the next card is
 console.log('The card dealt is a ' + tableCard2)
@@ -88,23 +92,23 @@ console.log('The card dealt is a ' + tableCard2)
 //if next card is lower and player2 guessed lower, give point
 //if next card is higher and player2 guessed lower, no point
 //if next card is lower and player2 guessed higher, no point
-if (tableCard1 < tableCard2 && player2 == 'higher') {
+if (tableCard1 < tableCard2 && guess2 == 'higher') {
   console.log('You guessed correctly')
   point2 ++
   round++
-} else if (tableCard1 > tableCard2 && player2 == 'higher') {
+} else if (tableCard1 > tableCard2 && guess2 == 'higher'){
   console.log('You guessed incorrectly')
   round++
-} else if (tableCard1 < tableCard2 && player2 == 'lower') {
+} else if (tableCard1 < tableCard2 && guess2 == 'lower') {
   console.log('You guessed incorrectly')
   round++
-}else if (tableCard1 > tableCard2 && player2 == 'lower') {
+}else if (tableCard1 > tableCard2 && guess2 == 'lower') {
   console.log('You guessed correctly')
   point2 ++
   round++
 }
 //lets player know how many points they have
-console.log('Player2 you have ' + point2 + ' points.\n ')
+console.log(player2 + ' you have ' + point2 + ' points.\n ')
 }
 
 //will keep repeating until each player has had 3 goes
@@ -113,8 +117,8 @@ do{
 }while (round <= 4)
 
 //lets both players know how many points they have
-console.log('\nPlayer1 you have ' + point1 + ' points.')
-console.log('Player2 you have ' + point2 + ' points.\n')
+console.log('\n' + player1 + ' you have ' + point1 + ' points.')
+console.log(player2 + ' you have ' + point2 + ' points.\n')
 
 //asks players if they want to play again
 playAgain = prompt('Do you want to play again?');
