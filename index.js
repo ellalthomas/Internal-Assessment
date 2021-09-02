@@ -25,8 +25,8 @@ let round = 0
 //initializing variables before using them so it won't come up with 'undefined'
 let randomCard1 = ''
 let randomCard2 = ''
-let tableCard1=''
-let tableCard2=''
+let card1=''
+let card2=''
 
 //lets players know what they can choose from
 console.log('\nThese are the cards you will choose from. \n' + number + '\n ');
@@ -39,35 +39,35 @@ function play(){
 let randomCard2 = Math.floor(Math.random() * length + 0);
 let randomCard1 = Math.floor(Math.random() * length + 0);
 
-let tableCard1 = number[randomCard1];
-let tableCard2 = number[randomCard2];
+let card1 = number[randomCard1];
+let card2 = number[randomCard2];
 
 
 //Lets player1 know what card is dealt
-console.log('The card dealt is a ' + tableCard1);
+console.log('The card dealt is a ' + card1);
 
 //asks player if they think card will be higher or lower
 let guess1 = prompt(player1 + ' do you think the next card dealt will be higher or lower?');
 
 //lets player know what the next card is thats dealt
-console.log('The card dealt is a ' + tableCard2);
+console.log('The card dealt is a ' + card2);
 
 
 //if next card is higher and player1 guessed higher, give a point
 //if next card is lower and player1 guessed lower, give point
 //if next card is higher and player1 guessed lower, no point
 //if next card is lower and player1 guessed higher, no point
-if (tableCard1 < tableCard2 && guess1 == 'higher') {
+if (card1 < card2 && guess1 == 'higher') {
   console.log('You guessed correctly');
   point1 ++
   round++
-} else if (tableCard1 > tableCard2 && guess1 == 'higher') {
+} else if (card1 > card2 && guess1 == 'higher') {
   console.log('You guessed incorrectly');
   round++
-} else if (tableCard1 < tableCard2 && guess1 == 'lower') {
+} else if (card1 < card2 && guess1 == 'lower') {
   console.log('You guessed incorrectly');
   round++
-}else if(tableCard1 > tableCard2 && guess1 == 'lower') {
+}else if(card1 > card2 && guess1 == 'lower') {
   console.log('You guessed correctly');
   point1 ++
   round++
@@ -82,35 +82,35 @@ randomCard2 = Math.floor(Math.random() * length + 0);
 randomCard1 = Math.floor(Math.random() * length + 0);
 
 //
-tableCard1 = number[randomCard1];
-tableCard2 = number[randomCard2];
+card1 = number[randomCard1];
+card2 = number[randomCard2];
 
 
 //Lets player2 know what card is dealt
-console.log('The next card dealt is a ' + tableCard1)
+console.log('The next card dealt is a ' + card1)
 
 //asks player2 if they think card will be higher or lower
 let guess2 = prompt(player2 + ' do you think the next card dealt will be higher or lower?');
 
 //lets player know what the next card is thats been dealt
-console.log('The card dealt is a ' + tableCard2);
+console.log('The card dealt is a ' + card2);
 
 
 //if next card is higher and player2 guessed higher, give a point
 //if next card is lower and player2 guessed lower, give point
 //if next card is higher and player2 guessed lower, no point
 //if next card is lower and player2 guessed higher, no point
-if (tableCard1 < tableCard2 && guess2 == 'higher') {
+if (card1 < card2 && guess2 == 'higher') {
   console.log('You guessed correctly');
   point2 ++
   round++
-} else if (tableCard1 > tableCard2 && guess2 == 'higher'){
+} else if (card1 > card2 && guess2 == 'higher'){
   console.log('You guessed incorrectly');
   round++
-} else if (tableCard1 < tableCard2 && guess2 == 'lower') {
+} else if (card1 < card2 && guess2 == 'lower') {
   console.log('You guessed incorrectly');
   round++
-}else if (tableCard1 > tableCard2 && guess2 == 'lower') {
+}else if (card1 > card2 && guess2 == 'lower') {
   console.log('You guessed correctly');
   point2 ++
   round++
