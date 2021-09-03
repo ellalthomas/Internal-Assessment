@@ -9,6 +9,19 @@ console.log('Welcome to the Card Game. In this game a card will be dealt. Your j
 let player1 = prompt('What is player1 name?');
 let player2 = prompt('What is player2 name?');
 
+// dealing with invalid input for player1
+    while (player1 == '' || player1 == ' '){
+      console.log('Sorry player1 input is invalid.');
+      player1 = prompt('What is player1 name?');
+      }
+
+// dealing with invalid input for player2
+    while (player2 == '' || player2 == ' '){
+      console.log('Sorry player2 input is invalid.');
+      player2 = prompt('What is player2 name?');
+      }
+
+
 //list of numbers that can be picked
 let number = [ 1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12,  13];
 
