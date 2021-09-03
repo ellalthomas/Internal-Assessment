@@ -62,6 +62,13 @@ console.log('The card dealt is a ' + card1);
 //asks player if they think card will be higher or lower
 let guess1 = prompt(player1 + ' do you think the next card dealt will be higher or lower?');
 
+//dealing with invalid input for player1 guess
+while (guess1 != 'higher' && guess1 != 'lower') {
+  console.log('\nThat guess is not valid. Please enter higher or lower.');
+  guess1 = prompt(player1 + ' do you think the next card dealt will be higher or lower?');
+}
+
+
 //lets player know what the next card is thats dealt
 console.log('The card dealt is a ' + card2);
 
@@ -104,6 +111,13 @@ console.log('The next card dealt is a ' + card1)
 
 //asks player2 if they think card will be higher or lower
 let guess2 = prompt(player2 + ' do you think the next card dealt will be higher or lower?');
+
+//dealing with invalid input for player2 guess
+while (guess2 != 'higher' && guess2 != 'lower') {
+  console.log('\nThat guess is not valid. Please enter higher or lower.');
+  guess2 = prompt(player2 + ' do you think the next card dealt will be higher or lower?');
+}
+
 
 //lets player know what the next card is thats been dealt
 console.log('The card dealt is a ' + card2);
