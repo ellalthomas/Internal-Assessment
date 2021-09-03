@@ -1,5 +1,5 @@
 // Internal Assessment Card Game
-// Submit 30 August
+// Submit 3 September
 // Ella Thomas
 
 //instructions on how to play
@@ -151,6 +151,9 @@ do{
   play();
 }while (round <= 4);
 
+//will let player keep playing again until they want to stop
+do{
+
 //lets both players know how many points they have
 console.log('\n' + player1 + ' you have ' + point1 + ' points.');
 console.log(player2 + ' you have ' + point2 + ' points.\n');
@@ -164,8 +167,6 @@ if (point1 > point2){
   console.log('You both tied!\n');
 }
 
-//will let player keep playing again until they want to stop
-do{
 //asks players if they want to play again
 playAgain = prompt('Do you want to play again?');
 
